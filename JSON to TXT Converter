@@ -1,0 +1,22 @@
+import json
+import os
+
+
+# Replace 'input_json' with the path to your JSON file.
+input_json = "the_path_to_your_JSON_file" 
+
+with open(input_json, 'r') as json_file:
+    data = json.load(json_file)
+    
+    for item in data['appropriate_key_or_info_you_want_from_TXT_file']:  # Replace with the appropriate key or structure in your JSON
+        output_directory = 'the_desired_output_directory_for_TXT_file' # Change to the desired output directory
+        filename = os.path.join(output_directory, "filename.txt")  # Customize the filename as needed
+        #image_num = str(item['the_id_which_the_objects_share']) # Use this only when there are more than one item with the same id # Customize the item as needed 
+        with open(filename, 'a') as text_file:
+            if str(item['the_id_which_the_objects_share']) == image_num: # Customize the item as needed
+                text_file.write('the_content_you_would_like_to_extract_from_JSON_to_TXT')  # Replace with the relevant content from your JSON
+            else:
+                break
+                
+            
+    
